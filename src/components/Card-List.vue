@@ -1,5 +1,4 @@
 <template>
-  <div class="container">
     <div class="card">
       <div class="card-header">
         <label for="title"> Título da Tarefa</label>
@@ -7,12 +6,13 @@
         <button type="submit" @click="onclick">Add</button>
       </div>
       <div class="card-list">
+        <h2>Lista de Tarefas</h2>
         <ul v-for="(title, index) in list" :key="index">
           <li>{{ title }}</li>
+          <button class="btn-delete" @click="list.splice(index, 1)">X</button>
         </ul>
       </div>
     </div>
-  </div>
 </template>
 
 <script>
@@ -69,7 +69,49 @@ export default {
     align-items: center;
     margin-top: 20px;
     gap: 10px;
+  }
 
+  .card-list ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .card-list li {
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+    font-weight: 700;
+    text-align: center;
+  }
+
+  .card-list h2 {
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 25px;
+    font-weight: 700;
+    text-align: center;
+  }
+
+  .btn-delete {
+    background-color: transparent;
+    border-radius: 5px;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 12px;
+    font-weight: 700;
+    border-radius: 5px;
+    width: 30px;
+    border: 1px solid rgb(210, 143, 50);
+    padding: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .btn-delete:hover {
+    background-color: rgb(210, 143, 50);
   }
 
   input {

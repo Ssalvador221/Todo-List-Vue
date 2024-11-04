@@ -4,10 +4,8 @@ import CardList from './components/Card-List.vue'
 </script>
 
 <template>
-  <div>
+  <div class="container">
     <CardHeader />
-  </div>
-  <div>
     <CardList />
   </div>
 </template>

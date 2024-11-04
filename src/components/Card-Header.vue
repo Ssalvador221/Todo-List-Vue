@@ -1,11 +1,9 @@
 <template>
-  <div class="container">
     <div class="card">
       <div class="card-header">
         <h1>Todo - List</h1>
       </div>
     </div>
-  </div>
 </template>
 
 <script>
